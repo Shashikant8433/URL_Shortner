@@ -16,14 +16,14 @@ router.route("/")
         allShortLinks = allShortLinks.sort((a,b)=>{
           const x = a.createdAt.getTime();
           const y = b.createdAt.getTime();
-          return x < y ? -1 : x > y ? 1 : 0;
+          return x < y ? 1 : x > y ? -1 : 0;
         })
       }
       if(req.query.sortBy === "oldest"){
         allShortLinks = allShortLinks.sort((a,b)=>{
           const x = a.createdAt.getTime();
           const y = b.createdAt.getTime();
-          return x < y ? 1 : x > y ? -1 : 0;
+          return x < y ? -1 : x > y ? 1 : 0;
         })
       }
       if(req.query.sortBy === "aUrl"){
